@@ -64,10 +64,10 @@ class TaskInterface(abc.ABC):
 
     @abc.abstractmethod
     def evaluate_predictions(
-            self,
-            *,
-            predictions: List[Mapping[str, Any]] = None,
-            gold: datasets.Dataset = None,
+        self,
+        *,
+        predictions: List[Mapping[str, Any]] = None,
+        gold: datasets.Dataset = None,
     ) -> EvaluationResult:
         """Evaluate the predictions of the model against the gold data.
 
@@ -105,10 +105,10 @@ class TaskInterface(abc.ABC):
 
     @abc.abstractmethod
     def get_prepared_datasets(
-            self,
-            preparation_strategy: PreparationStrategy,
-            shot_list: Optional[List[int]] = None,
-            random_seed: int = 42,
+        self,
+        preparation_strategy: PreparationStrategy,
+        shot_list: Optional[List[int]] = None,
+        random_seed: int = 42,
     ) -> Union[Mapping[DatasetSplit, Dataset], Mapping[int, Dataset]]:
         """
         Get the prepared datasets based on the specified preparation strategy.
