@@ -4,12 +4,12 @@
 # Adapted from https://github.com/huggingface/evaluate/blob/main/Makefile
 
 check-quality:
-	black --check --line-length 119 --target-version py38 tests src
+	black --check --line-length 119 --target-version py39 tests src
 	isort --check-only tests src
 	flake8 tests src
 
 # Format source code automatically
 
 fix-style:
-	black --line-length 119 --target-version py38 tests src
+	black --line-length 119 --target-version py39 tests src
 	isort tests src
